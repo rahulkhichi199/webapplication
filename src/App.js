@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css';
+import NavBar from './component/Navbarui'
+import Landing from './component/Landing';
+import Createnft from './component/Createnft';
+import Dashboard from './component/Dashboard';
+import Marketplace from './component/Marketplace';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/createnft" element={<Createnft />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+      </Routes>
+    </Router>
   );
 }
 
