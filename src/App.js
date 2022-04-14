@@ -1,14 +1,14 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React from "react";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css';
-import NavBar from './component/Navbarui'
-import Landing from './component/Landing';
-import Createnft from './component/Createnft';
-import Dashboard from './component/Dashboard';
-import Marketplace from './component/Marketplace';
+import "./App.css";
+import NavBar from "./component/Navbarui";
+import Landing from "./component/Landing";
+import Createnft from "./component/Createnft";
+import Dashboard from "./component/Dashboard";
+import Marketplace from "./component/Marketplace";
 
 function App() {
   return (
