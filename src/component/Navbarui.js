@@ -36,7 +36,7 @@ const Navbarui = () => {
             <Nav className="c col-2">
               <div className="dropdown">
                 <button
-                  className="btn btn-secondary dropdown-toggle"
+                  className="btn btn-danger dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton2"
                   data-bs-toggle="dropdown"
@@ -50,17 +50,17 @@ const Navbarui = () => {
                 >
                   <li>
                     <a className="dropdown-item active" href="#">
-                      Action
+                      Metamask
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Another action
+                      demo1
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Something else here
+                      demo2
                     </a>
                   </li>
                 </ul>
