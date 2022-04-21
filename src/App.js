@@ -40,9 +40,9 @@ function App(props) {
       />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/create" element={<Marketplace />} />
         <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/create" element={<Createnft />} />
+        <Route path="/createnft" element={<Createnft />} />
+        <Route path="/Marketplace" element={<Marketplace />} />
       </Routes>
     </Router>
   );
