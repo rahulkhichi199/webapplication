@@ -1,5 +1,4 @@
 import React from 'react';
-import { Nav } from "react-bootstrap";
 import  Tabs  from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab';
 import UploadNFT from './UploadNFT';

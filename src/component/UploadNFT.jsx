@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import axios from "axios";
 import './UploadNFT.css';
+const http = require('http');
+
+
 export class UploadNFT extends Component {
+
+
     state = {
         profileImg: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
     }
@@ -15,13 +21,35 @@ export class UploadNFT extends Component {
     };
     render() {
         const { profileImg } = this.state
+
+        // form submit steps
+        const submitHandler = (event) => {
+            event.preventDefault();
+            // const image = event.target.image - upload.value;
+            const NFTname = event.target.NFTname.value;
+            const Title = event.target.Title.value;
+            const Amount = event.target.Amount.value;
+            axios.post("https://jsonplaceholder.typicode.com/posts", {
+                NFTname,
+                Title,
+                Amount
+            })
+                .then(response => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+
+
         return (
 
 
 
             <div>
 
-                <form class="row g-3">
+                <form class="row g-3" onSubmit={submitHandler}>
 
                     <div className="page" id='page'>
                         <div className="container" id='container'>
@@ -50,42 +78,42 @@ export class UploadNFT extends Component {
 
                     <div class="col-md-4">
                         <label for="validationServer01" class="form-label">NFT name</label>
-                        <input type="text" class="form-control " id="validationServer01" required />
+                        <input type="text" name='NFTname' class="form-control " id="validationServer01" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationServer02" class="form-label">Title</label>
-                        <input type="text" class="form-control " id="validationServer02" required />
+                        <input type="text" name='Title' class="form-control " id="validationServer02" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationServer02" class="form-label">Amount</label>
-                        <input type="text" class="form-control " id="validationServer02" required />
+                        <input type="text" name='Amount' class="form-control " id="validationServer02" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationServer02" class="form-label">Asset ID</label>
-                        <input type="text" class="form-control " id="validationServer02" required />
+                        <input type="text" name='Asset ID' class="form-control " id="validationServer02" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-8">
                         <label for="validationServer02" class="form-label">Tags</label>
-                        <input type="text" class="form-control " id="validationServer02" required />
+                        <input type="text" name='Tags' class="form-control " id="validationServer02" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationServer02" class="form-label">Creator name</label>
-                        <input type="text" class="form-control " id="validationServer02" required />
+                        <input type="text" name='Creator name' class="form-control " id="validationServer02" required />
                         <div class="valid-feedback">
                             Looks good!
                         </div>

@@ -22,7 +22,7 @@ function App(props) {
       alert("You are successfully connected");
       setLoading(false);
       console.log("Function Called");
-      window.preventDefault();
+      // window.preventDefault();
     } else {
       const aa = await alert("Install Metamask");
       window.open(
