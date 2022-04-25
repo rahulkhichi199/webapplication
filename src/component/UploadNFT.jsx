@@ -1,11 +1,29 @@
+import { useState } from 'react';
 import React, { Component } from 'react';
-import axios from "axios";
+import axios, { Axios } from "axios";
 import './UploadNFT.css';
 const http = require('http');
 
 
 
 export class UploadNFT extends Component {
+
+
+
+
+
+
+
+const [file, setFile] = useState();
+const send = event =>{
+
+const data = new FormData();
+data.append("file",file);
+Axios.post("http://localhost:3000/upload",data).then(res=>console.log(res)).catch(err=>console.log(err));
+};
+
+
+
 
 
     // constructor()
@@ -71,7 +89,22 @@ axios
             }
         }
         reader.readAsDataURL(e.target.files[0])
+
+
+
+
+const file = e.target.files[0];
+setFile(file);
+
     };
+
+
+
+
+
+
+
+
     render() {
         const { profileImg } = this.state
 
@@ -110,7 +143,7 @@ axios
                             <div className="img-holder" id='img-holder'>
                                 <img src={profileImg} alt="" id="img" className="img" />
                             </div>
-                            <input type="file" accept=".png, .jpeg" name="image-upload" id="input" onChange={this.imageHandler} />
+                            <input type="file" accept=".png, .jpeg" name="image-upload" id="file" onChange={this.imageHandler} />
                             <div className="label" id='label'>
                                 <label className="image-upload" id='image-upload' htmlFor="input">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
@@ -173,7 +206,7 @@ axios
                     </div>
 
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button onClick={send} class="btn btn-primary" type="submit">Submit</button>
                     </div>
 
 
@@ -188,5 +221,6 @@ axios
         );
     }
 }
+
 
 export default UploadNFT;
